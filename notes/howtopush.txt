@@ -1,0 +1,35 @@
+Git Commit & Push
+
+1. Check which files you changed
+
+git status
+
+
+2. Stage your changes
+
+git add .
+
+
+(The . means “add all changes”. You can also add a single file: git add filename.py)
+
+3. Commit your changes
+
+git commit -m "short description of what you changed"
+
+
+Example:
+
+git commit -m "added about page and stylesheet"
+
+
+4. Push your changes to GitHub
+
+git push origin main
+
+
+5. Confirm on GitHub
+Go to your repository on GitHub and check that your changes are there.
+
+⚡ Shortcut (all in one line):
+
+git add . && git commit -m "your message here" && git push
