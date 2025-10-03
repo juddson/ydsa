@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/37d443352e.js" crossorigin="anonymous"></script>
+    <meta name='description' content='Everything to do with the YDSA chapter located at the University of Alabama at Birmingham.'>
+    <title>{% block title %}YDSA UAB{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav id="main-nav">
+            <div class="container"
+                <a href="{{ url_for('home') }}"><img src="/static/img/ydsauablogo.webp" alt="YDSA UAB" class="logo"></a>
+                <div class="social">
+                    <!-- <a href="put twitter link here" target="_blank"><i class="fab fa-twitter fa-2x"></i></a> -->
+                    <a href="https://www.instagram.com/ydsauab/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                </div>
+                <ul>
+                    <li><a href="{{ url_for('home') }}" class="current">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
