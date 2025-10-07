@@ -27,7 +27,29 @@
         </nav>
     </header>
     <main>
-        {% block content %}{% endblock %}
+        <section class="layout">
+        <article>
+            {% block content %}{% endblock %}
+        </article>
+
+        <aside id="sidebar" role="complementary">
+            <section>
+            <h1>Keep In Touch</h1>
+            <ul>
+                <li><a class="side-link" href="https://twitter.com/YDSA_">Twitter</a></li>
+                <li><a class="side-link" href="https://www.instagram.com/ydsauab/">Instagram</a></li>
+                <li><a class="side-link" href="https://www.facebook.com/uabydsa/">Facebook</a></li>
+            </ul>
+            </section>
+        </aside>
+        </section>
     </main>
+    <footer>
+        <nav id="foot-nav">
+            <div>
+               <a href="{{ url_for('home') }}" class="current">Home</a> 
+            </div>
+        </nav>
+    </footer>
 </body>
 </html>
