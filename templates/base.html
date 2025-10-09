@@ -7,6 +7,7 @@
     <script src="https://kit.fontawesome.com/37d443352e.js" crossorigin="anonymous"></script>
     <meta name='description' content='Everything to do with the YDSA chapter located at the University of Alabama at Birmingham.'>
     <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -20,9 +21,9 @@
                     <a href="https://www.facebook.com/uabydsa/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
                 </div>
                 <ul>
-                    <li><a href="{{ url_for('home') }}" class="current">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">About</a></li>
-                    <li><a href="{{ url_for('home') }}">Join</a></li>
+                    <li><a href="{{ url_for('home') }}" class="{% if active_page == 'home' %}current{% endif %}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="{% if active_page == 'about' %}current{% endif %}">About</a></li>
+                    <li><a href="{{ url_for('join') }}" class="{% if active_page == 'join' %}current{% endif %}">Join</a></li>
                 </ul>
             </div>
         </nav>
@@ -59,11 +60,12 @@
                 <ul>
                     <h2>Navigation</h2>
                     <li><a href="{{ url_for('home') }}">Home</a></li> 
+                    <li><a href="{{ url_for('about') }}">About</a></li> 
+                    <li><a href="{{ url_for('join') }}">Join</a></li> 
                 </ul>
                 <ul>
                     <h2>Keep In Touch</h2>
                     <li><a href="{{ url_for('home') }}">Home</a></li> 
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('home') }}">Home</a></li>
                     <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -72,17 +74,21 @@
                     <h2>Other Useful Links</h2>
                     <li><a href="{{ url_for('home') }}">Home</a></li> 
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
                 </ul>
                 <ul>
                     <h2>Contact</h2>
-                    <li><a href="{{ url_for('home') }}">Home</a></li> 
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li class="foot-nav-space"></li>
+                    <li>
+                        <p>
+                        You can reach a member of YDSA UAB through social media, a club meeting, or email.
+                        </p>
+                    </li>
+                    <li class="foot-nav-space"></li>
+                    <li>
+                        <p>
+                            <Strong><u>YDSA Contact Email:</u></Strong> <email>genericemail@ydsauab.com</email>
+                        </p>
+                    </li>
                 </ul>
             </div>
         </nav>
