@@ -6,17 +6,18 @@
     --light-color: grey;
     --dark-color: black;
     --bg-color: #f7f7f7;
+    --soft-text: #252525; 
 }
 
 * { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     line-height: 1.5;
     /*/ background: var(--light-color); /*/
 }
@@ -42,6 +43,16 @@ h1, h2, h3, h4 {
     margin: 5;
     padding-top: 2%;
     padding-bottom: 2%;
+    color: black;
+}
+
+p {
+    color: var(--soft-text);
+    line-height: 1.7;
+}
+
+strong {
+    color: black;
 }
 
 /*/ main section / sidebar /*/
@@ -66,6 +77,10 @@ h1, h2, h3, h4 {
 
 #sidebar section {
   padding: 0.75rem 1rem;
+}
+
+#sidebar section ul {
+    line-height: 2;
 }
 
 #sidebar ul li a:hover {
@@ -191,7 +206,7 @@ h1, h2, h3, h4 {
 
 .foot-nav-space {
     display: block;
-    padding: .5rem;
+    padding: .1rem;
     margin: .1rem;
 }
 
@@ -206,17 +221,22 @@ main {
 }
 
 main > section {
-  display: flex;
-  align-items: flex-start;  
-  gap: 2rem;                
+    display: flex;
+    align-items: flex-start;  
+    gap: 2rem;              
 }
 
 main > section > article {
-  flex: 3;   /* grows wider */
+    flex: 3;   /* grows wider */
 }
 
 main > section > aside {
-  flex: 1;
+    flex: 1;
+}
+
+main > section > aside > section > ul {
+    border: none;
+    border-bottom: 1px dashed #777;
 }
 
 main > section > aside > section > h1 {
