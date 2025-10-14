@@ -1,18 +1,27 @@
 {
   "name": "Flask Dev",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
-  },
-  "postCreateCommand": "python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-vsliveshare.vsliveshare"
-      ]
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        // Always use the workspace venv
+        "python.defaultInterpreterPath": ".venv/bin/python"
+      }
     }
   },
+
+  // runs once when the container is first created
+  "onCreateCommand": "python -m venv .venv",
+
+  // runs after creation; good place to install deps
+  "postCreateCommand": ". .venv/bin/activate && pip install -r requirements.txt",
+
+  // runs on every start (even after stop/resume)
+  "postStartCommand": ". .venv/bin/activate && pip install -r requirements.txt",
+
   "forwardPorts": [5000]
 }
