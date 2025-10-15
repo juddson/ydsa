@@ -1,6 +1,10 @@
 {
   "name": "Flask Dev",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -8,19 +12,18 @@
         "ms-python.vscode-pylance"
       ],
       "settings": {
-        // Always use the workspace venv
         "python.defaultInterpreterPath": ".venv/bin/python"
       }
     }
   },
 
-  // runs once when the container is first created
+  // Runs only the first time the container is created
   "onCreateCommand": "python -m venv .venv",
 
-  // runs after creation; good place to install deps
-  "postCreateCommand": ". .venv/bin/activate && pip install -r requirements.txt",
+  // Install your deps after creation
+  "postCreateCommand": ". .venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt && sudo apt-get update -y && sudo apt-get install -y sqlite3",
 
-  // runs on every start (even after stop/resume)
+  // Keep deps fresh every time the Codespace starts
   "postStartCommand": ". .venv/bin/activate && pip install -r requirements.txt",
 
   "forwardPorts": [5000]
