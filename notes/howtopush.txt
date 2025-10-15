@@ -32,4 +32,4 @@ Go to your repository on GitHub and check that your changes are there.
 
 ⚡ Shortcut (all in one line):
 
-git add . && git commit -m "started adding form for newsletter joining" && git push
+git add . && git commit -m "enter changes made here" && git push

@@ -18,16 +18,16 @@
     <header>
         <nav id="main-nav">
             <div class="container">
-                <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='img/ydsauablogo.webp') }}" alt="YDSA UAB" class="logo"></a>
+                <a href="{{ url_for('main.home') }}"><img src="{{ url_for('static', filename='img/ydsauablogo.webp') }}" alt="YDSA UAB" class="logo"></a>
                 <div class="social">
                     <a href="https://x.com/ydsauab/" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
                     <a href="https://www.instagram.com/ydsauab/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
                     <a href="https://www.facebook.com/uabydsa/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
                 </div>
                 <ul>
-                    <li><a href="{{ url_for('home') }}" class="{% if active_page == 'home' %}current{% endif %}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}" class="{% if active_page == 'about' %}current{% endif %}">About</a></li>
-                    <li><a href="{{ url_for('join') }}" class="{% if active_page == 'join' %}current{% endif %}">Join</a></li>
+                    <li><a href="{{ url_for('main.home') }}" class="{% if active_page == 'home' %}current{% endif %}">Home</a></li>
+                    <li><a href="{{ url_for('main.about') }}" class="{% if active_page == 'about' %}current{% endif %}">About</a></li>
+                    <li><a href="{{ url_for('main.join') }}" class="{% if active_page == 'join' %}current{% endif %}">Join</a></li>
                 </ul>
             </div>
         </nav>
@@ -63,9 +63,9 @@
             <div class="container">
                 <ul>
                     <h2>Navigation</h2>
-                    <li><a href="{{ url_for('home') }}">Home</a></li> 
-                    <li><a href="{{ url_for('about') }}">About</a></li> 
-                    <li><a href="{{ url_for('join') }}">Join</a></li> 
+                    <li><a href="{{ url_for('main.home') }}">Home</a></li> 
+                    <li><a href="{{ url_for('main.about') }}">About</a></li> 
+                    <li><a href="{{ url_for('main.join') }}">Join</a></li> 
                 </ul>
                 <ul>
                     <h2>Keep In Touch</h2>
