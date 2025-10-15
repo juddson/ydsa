@@ -4,6 +4,29 @@
 
 {% block content %}
   <main>
+  <section id="banner" class="container">
+    <div class="carousel" aria-roledescription="carousel" aria-label="Homepage banners">
+      <button class="carousel__btn carousel__btn--prev" aria-label="Previous slide">‹</button>
+
+      <div class="carousel__viewport">
+        <div class="carousel__track">
+          <div class="carousel__slide is-active">
+            <img src="{{ url_for('static', filename='img/ydsauabbanner.png') }}" alt="Campus outreach">
+          </div>
+          <div class="carousel__slide">
+            <img src="{{ url_for('static', filename='img/ydsauabbanner.png') }}" alt="Flyer for meeting">
+          </div>
+          <div class="carousel__slide">
+            <img src="{{ url_for('static', filename='img/ydsauabbanner.png') }}" alt="Volunteering event">
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel__btn carousel__btn--next" aria-label="Next slide">›</button>
+
+      <div class="carousel__dots" role="tablist" aria-label="Choose slide"></div>
+    </div>
+  </section>
     <section>
       <article>
         <h1>Welcome To YDSA UAB</h1>

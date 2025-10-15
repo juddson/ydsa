@@ -1,12 +1,13 @@
 /*/ create variables here /*/
 :root {
-    --max-width: 1200px;
-    --primary-color: red; /*/ colors can be changed, just setting up a base /*/
-    --secondary-color: blue;
-    --light-color: grey;
-    --dark-color: black;
+    --max-width: 1200px; /*/ colors below are pulled from the ydsa color pallete https://design.dsausa.org/national-identity/color-palette/ /*/
+    --primary-color: #EC1F27; /*/ ydsa red /*/
+    --secondary-color: #F4797E; /*/ dsa red tint 2 /*/
+    --light-color: #F7A5A9; /*/ dsa red tint 3 /*/
+    --light-gray: #8C8989; /*/ dsa black tint 3 /*/
+    --dark-color: #231F20; /*/ dsa black /*/
     --bg-color: #f7f7f7;
-    --soft-text: #252525; 
+    --soft-text: #3B3838; /*/ dsa black tint 1 /*/
     --soft-white-text: #f2f2f2;
 }
 
@@ -24,7 +25,7 @@ body {
 }
 
 a {
-    color: #333;
+    color: var(--dark-color);
     text-decoration: none;
 }
 
@@ -44,7 +45,7 @@ h1, h2, h3, h4 {
     margin: 5;
     padding-top: 2%;
     padding-bottom: 2%;
-    color: black;
+    color: var(--dark-color);
 }
 
 p {
@@ -53,7 +54,7 @@ p {
 }
 
 strong {
-    color: black;
+    color: var(--dark-color);
 }
 
 /*/ main section / sidebar /*/
@@ -105,7 +106,7 @@ strong {
 
 /* Navigation */
 #main-nav {
-    background: #fff;
+    background: white;
     position: sticky;
     top: 0;
     z-index: 2;
@@ -115,9 +116,9 @@ strong {
     display: grid;
     grid-template-columns: 6fr 3fr 2fr;
     padding: 1rem;
-    align-items: center;
+    align-items: end;
     border: none;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--dark-color);
 }
 
 #main-nav .logo {
@@ -146,13 +147,96 @@ strong {
 
 #main-nav .social {
     justify-self: center;
+}
 
+.fab:hover {
+    color: var(--secondary-color)
 }
 
 #main-nav .social i {
-    color: #777;
+    color: var(--light-gray);
     margin-right: .5rem;
 }
+
+/* --- Carousel layout --- */
+.carousel {
+  position: relative;
+  max-width: 1200px;   /* match your site width */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 350ms ease-in-out;
+  will-change: transform;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  position: relative;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Arrows --- */
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel__btn:hover { background: rgba(0,0,0,0.65); }
+
+.carousel__btn--prev { left: 10px; }
+.carousel__btn--next { right: 10px; }
+
+/* --- Dots --- */
+.carousel__dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.carousel__dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--light-gray);
+  border: none;
+  cursor: pointer;
+}
+
+.carousel__dot[aria-selected="true"] {
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--primary-color) inset;
+}
+
+/* Optional: maintain a nice banner aspect on huge screens */
+#banner .carousel { aspect-ratio: 16 / 6; }
+#banner .carousel__slide img { object-fit: cover; height: 100%; }
+
 
 .side-link {
     color: var(--primary-color);
@@ -216,6 +300,12 @@ strong {
     margin: .1rem;
 }
 
+/*/ banner /*/
+
+#banner {
+    margin: 1rem;
+}
+
 /*/ main section /*/
 
 main {
@@ -248,7 +338,7 @@ main > section > aside > section > ul {
 main > section > aside > section > h1 {
     display: block;
     border: none;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--dark-color);
 }
 
 main > section > aside > section > div > ul > li {
