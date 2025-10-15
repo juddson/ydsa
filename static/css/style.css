@@ -345,3 +345,12 @@ main > section > aside > section > div > ul > li {
     padding-top: 2%;
     padding-bottom: 2%;
 }
+
+/*/ join /*/
+
+.form { max-width: 520px; }
+.field { margin-bottom: 1rem; }
+.input { width: 100%; padding: .6rem .8rem; border:1px solid #ccc; border-radius:8px; }
+.checkbox input { margin-right: .5rem; }
+.error { color:#b00020; }
+
